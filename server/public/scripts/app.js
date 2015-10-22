@@ -7,8 +7,8 @@ $(document).ready(function(){
         this.remove();
     });
 
-    $('.container').on('click', '.delete', function() {
-        $(this).parent().parent().remove();
+    $('.container-fluid').on('click', '.delete', function() {
+        $(this).parent().remove();
     });
 
 });
@@ -29,17 +29,18 @@ function appendDom(data) {
     var people = data.people;
 
     for(var i = 0; i < people.length; i++){
-        $('.container').append("<div class='person thumbnail well col-md-12'></div>");
+        $('.container-fluid').append("<div class='person thumbnail well col-md-4'></div>");
 
-        var $el = $('.container').children().last();
-        $el.append("<div class='col-md-3'><img src='" + people[i].imageURL + "' alt='profilepic' height='200' weight='200'></div>");
+        var $el = $('.container-fluid').children().last();
+        $el.append("<div class='images col-md-12'><img src='" + people[i].imageURL + "' alt='profilepic' height='200' weight='200'></div>");
 
-        $el.append("<div class='person-info col-md-9'>" +
+        $el.append("<div class='person-info col-md-12'>" +
             "<p>Name: " + people[i].name + "</p>" +
             "<p>Location: " + people[i].location + "</p>" +
             "<p>Position: " + people[i].position + "</p>" +
-            "<button class='delete btn btn-danger'>Delete Me</button>" +
             "</div>");
+
+        $el.append("<div class='delete btn btn-danger'>Delete Me</div>");
 
     }
 }
