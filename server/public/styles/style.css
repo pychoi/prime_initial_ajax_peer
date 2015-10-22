@@ -1,0 +1,16 @@
+.container {
+    margin-top: 50px;
+}
+
+.start {
+    display: block;
+    margin: 50px auto;
+}
+
+.person-info {
+    font-size: 20px;
+}
+
+.delete {
+    margin-top: 50px;
+}
